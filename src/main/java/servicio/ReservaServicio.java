@@ -238,7 +238,7 @@ public class ReservaServicio {
 
     /**
      * Consulta 10
-     * Obtener los nombres de clientes con al menos  minimoReservas  reservas, sin repeticiones.
+     * Obtener los nombres de clientes con al menos minimoReservas reservas, sin repeticiones.
      */
     public void getClientesFrecuentes(int minimoReservas) {
 
