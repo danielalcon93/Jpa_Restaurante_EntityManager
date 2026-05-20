@@ -25,7 +25,7 @@ public class ReservaServicio {
                     .setParameter("estado", EstadoReserva.CONFIRMADA)
                     .getResultList();
 
-            IO.println("Reservas Confirmadas");
+            System.out.println("Reservas Confirmadas");
             reservas.forEach(System.out::println);
 
         } finally {
@@ -50,7 +50,7 @@ public class ReservaServicio {
                     .setParameter("id", restauranteId)
                     .getResultList();
 
-            IO.println("Reservas por restaurante");
+            System.out.println("Reservas por restaurante");
             reservas.forEach(System.out::println);
 
         } finally {
@@ -73,7 +73,7 @@ public class ReservaServicio {
                     .setParameter("hoy", LocalDate.now())
                     .getResultList();
 
-            IO.println("Reservas pendientes para hoy");
+            System.out.println("Reservas pendientes para hoy");
             reservas.forEach(System.out::println);
 
         } finally {
@@ -99,7 +99,7 @@ public class ReservaServicio {
                     Object[].class)
                     .getResultList();
 
-            IO.println("Recaudacion por restaurante");
+            System.out.println("Recaudacion por restaurante");
 
             lista.stream()
                     .map(obj -> obj[0] + " -> " + obj[1] + "€")
@@ -126,8 +126,8 @@ public class ReservaServicio {
                     .findFirst()
                     .orElse(null);
 
-            IO.println("Restaurante con mas mesas");
-            IO.println(restaurante.getNombre() + " -> " + restaurante.getMesas().size() + " mesas");
+            System.out.println("Restaurante con mas mesas");
+            System.out.println(restaurante.getNombre() + " -> " + restaurante.getMesas().size() + " mesas");
 
         }  finally {
             em.close();
@@ -149,7 +149,7 @@ public class ReservaServicio {
                     .setParameter("estados", List.of(EstadoReserva.CANCELADA, EstadoReserva.NO_SHOW))
                     .getResultList();
 
-            IO.println("Reservas problematicas");
+            System.out.println("Reservas problematicas");
             reservas.forEach(System.out::println);
 
         } finally {
@@ -172,7 +172,7 @@ public class ReservaServicio {
                     "GROUP BY r.mesa.restaurante.ciudad", Object[].class)
                     .getResultList();
 
-            IO.println("Reservas por ciudad");
+            System.out.println("Reservas por ciudad");
 
             lista.stream()
                     .map(obj -> obj[0] + " -> " + obj[1] + " reservas")
@@ -199,9 +199,9 @@ public class ReservaServicio {
                     .max(Comparator.comparing(m -> m.getReservas().size()))
                     .orElse(null);
 
-            IO.println("Mesa mas solicitada");
+            System.out.println("Mesa mas solicitada");
 
-           IO.println(mesa);
+            System.out.println(mesa);
 
         } finally {
             em.close();
@@ -223,7 +223,7 @@ public class ReservaServicio {
                     "GROUP BY m.terraza", Object[].class)
                     .getResultList();
 
-            IO.println("Importe medio por terraza");
+            System.out.println("Importe medio por terraza");
 
             lista.stream()
                     .map(obj -> obj[0] + " -> " + obj[1] + "€")
@@ -254,7 +254,7 @@ public class ReservaServicio {
                     .distinct()
                     .toList();
 
-            IO.println("Clientes frecuentes");
+            System.out.println("Clientes frecuentes");
 
             clientesFrecuentes.forEach(System.out::println);
 

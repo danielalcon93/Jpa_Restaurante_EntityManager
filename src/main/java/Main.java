@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        IO.println("Arrancando aplicación restaurantes");
+        System.out.println("Arrancando aplicación restaurantes");
 
         RestauranteRepository restauranteRepo = new RestauranteRepository();
         MesaRepository mesaRepo = new MesaRepository();
@@ -468,34 +468,34 @@ public class Main {
 
 
         //Consultas
-        IO.println("--------- Consulta 1 -----------");
+        System.out.println("--------- Consulta 1 -----------");
         reservaServicio.getReservasConfirmadas();
 
-        IO.println("--------- Consulta 2 -----------");
+        System.out.println("--------- Consulta 2 -----------");
         reservaServicio.getReservasPorRestaurante(r1.getId());
 
-        IO.println("--------- Consulta 3 -----------");
+        System.out.println("--------- Consulta 3 -----------");
         reservaServicio.getReservasPendientesHoy();
 
-        IO.println("--------- Consulta 4 -----------");
+        System.out.println("--------- Consulta 4 -----------");
         reservaServicio.getRecaudacionPorRestaurante();
 
-        IO.println("--------- Consulta 5 -----------");
+        System.out.println("--------- Consulta 5 -----------");
         reservaServicio.getRestauranteConMasMesas();
 
-        IO.println("--------- Consulta 6 -----------");
+        System.out.println("--------- Consulta 6 -----------");
         reservaServicio.getReservasProblematicas();
 
-        IO.println("--------- Consulta 7 -----------");
+        System.out.println("--------- Consulta 7 -----------");
         reservaServicio.getReservasPorCiudad();
 
-        IO.println("--------- Consulta 8 -----------");
+        System.out.println("--------- Consulta 8 -----------");
         reservaServicio.getMesasMasSolicitadas();
 
-        IO.println("--------- Consulta 9 -----------");
+        System.out.println("--------- Consulta 9 -----------");
         reservaServicio.getImporteMedioPorTerraza();
 
-        IO.println("--------- Consulta 10 -----------");
+        System.out.println("--------- Consulta 10 -----------");
         reservaServicio.getClientesFrecuentes(2);
 
     }
